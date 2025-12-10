@@ -177,12 +177,13 @@ nextjs-portal,
 }
 
 .about-bg-container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 80px;
+  padding-right: 40px;
 }
 
 .about-left-content {
@@ -219,10 +220,8 @@ nextjs-portal,
 .about-right-box {
   flex: 0 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding-left: 40px;
-  margin-right: -20px;
 }
 
 /* About Section Responsive - Tablet */
@@ -268,8 +267,6 @@ nextjs-portal,
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 0;
-    margin-right: 0;
   }
 }
 
@@ -4733,6 +4730,12 @@ nextjs-portal,
 
 /* Mobile breakpoint */
 @media (max-width: 600px) {
+
+  /* Hide rotating border glow effect on mobile */
+  .rotating-border-glow {
+    display: none !important;
+  }
+
   .aboutme-fancy-box-wrapper {
     margin-top: 0;
     margin-right: 0;

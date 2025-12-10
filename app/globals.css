@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -30,6 +32,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Hide Next.js dev indicator */
@@ -119,10 +123,12 @@ nextjs-portal,
 /* Single Page Container */
 .single-page-container {
   width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 /* Mobile: Adjust padding for mobile navbar */
@@ -135,8 +141,10 @@ nextjs-portal,
 /* Full Width Section - No cards, seamless backgrounds */
 .section-full {
   width: 100%;
+  max-width: 100vw;
   padding: 80px 0;
   scroll-margin-top: 70px;
+  overflow-x: hidden;
 }
 
 /* Mobile scroll margin for fixed navbar */
@@ -160,10 +168,14 @@ nextjs-portal,
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .about-section-bg {
   background: linear-gradient(135deg, #4a2512 0%, #2d1408 50%, #1a0a05 100%);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* ============================================
@@ -171,13 +183,16 @@ nextjs-portal,
    ============================================ */
 .about-section {
   width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   background: linear-gradient(135deg, #F7931E 0%, #f5850a 100%);
   padding: 100px 60px 80px;
+  overflow-x: hidden;
 }
 
 .about-bg-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -4855,62 +4870,30 @@ nextjs-portal,
 /* Remove extra whitespace on mobile home section */
 @media (max-width: 900px) {
   .home-section-bg {
-    min-height: auto !important;
-    padding: 60px 0 0 !important;
-  }
-
-  .home-section-bg.section-full {
-    padding: 60px 0 0 !important;
+    min-height: auto;
+    padding: 60px 0 40px;
   }
 
   .home-section-bg .section-content {
     gap: 30px;
-    padding-bottom: 0;
   }
 
   .profile-box {
     margin-bottom: 0;
-  }
-
-  .home-right {
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
 }
 
 @media (max-width: 600px) {
   .home-section-bg {
-    padding: 30px 0 0 !important;
-  }
-
-  .home-section-bg.section-full {
-    padding: 30px 0 0 !important;
+    padding: 40px 0 20px;
   }
 
   .home-section-bg .section-content {
-    gap: 20px;
-    padding-bottom: 0;
+    gap: 25px;
   }
 
   .section-content {
     padding: 0 20px;
-  }
-
-  .profile-box {
-    margin-bottom: -20px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .home-right {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  /* Make about section overlap slightly to prevent white gap */
-  .about-section {
-    margin-top: -10px;
-    padding-top: 90px;
   }
 }
 
@@ -5053,5 +5036,49 @@ nextjs-portal,
   .about-main-heading {
     font-size: clamp(2rem, 15vw, 3rem);
     margin-bottom: 15px;
+  }
+}
+
+/* ==========================================
+   GLOBAL MOBILE OVERFLOW FIX
+   ========================================== */
+
+/* Prevent horizontal scroll on all mobile devices */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative;
+  }
+
+  /* Use overflow-clip for stricter overflow control */
+  .single-page-container,
+  .section-full,
+  .home-section-bg,
+  .about-section,
+  .about-bg-container,
+  .contact-section-bg {
+    overflow-x: clip !important;
+    max-width: 100vw !important;
+  }
+
+  /* Ensure all sections don't overflow */
+  section {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Limit section-content padding on small screens */
+  .section-content {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  /* Ensure framer motion elements don't cause overflow */
+  [class*="motion"] {
+    max-width: 100%;
   }
 }

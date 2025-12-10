@@ -11,14 +11,14 @@ import FooterSection from "@/components/ui/FooterSection";
 
 export default function Home() {
     return (
-        <>
+        <div style={{ overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
             {/* Fixed Centered Navigation - Desktop */}
             <Navbar />
             {/* Mobile Navigation */}
             <MobileNavbar />
 
             {/* Main scrollable content */}
-            <main className="single-page-container">
+            <main className="single-page-container" style={{ overflowX: 'hidden' }}>
                 <HomeSection />
                 <AboutSection />
                 <ProjectsSection />
@@ -26,6 +26,6 @@ export default function Home() {
                 <ContactSection />
                 <FooterSection />
             </main>
-        </>
+        </div>
     );
 }

@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -44,6 +44,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${silkscreen.variable} antialiased`}
+        style={{ overflowX: 'hidden', maxWidth: '100vw' }}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}

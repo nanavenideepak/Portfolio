@@ -221,6 +221,8 @@ nextjs-portal,
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 40px;
+  margin-right: -20px;
 }
 
 /* About Section Responsive - Tablet */
@@ -266,6 +268,8 @@ nextjs-portal,
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 0;
+    margin-right: 0;
   }
 }
 

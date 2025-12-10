@@ -43,7 +43,7 @@ export default function FooterSection() {
                         Deepak Nanaveni
                     </h2>
                     <p className="footer-signature">
-                        Made with Love by <span className="signature-highlight">Deepak Nanaveni.</span>
+                        <span className="signature-highlight">Full Stack Developer</span>
                     </p>
                 </motion.div>
 

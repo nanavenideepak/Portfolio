@@ -15,14 +15,21 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
+                    {/* Big "ABOUT ME" Heading */}
+                    <h1 className="about-main-heading font-science-gothic">
+                        ABOUT
+                        <br />
+                        ME
+                    </h1>
+
                     {/* Hero Heading */}
-                    <h1 className="about-hero-heading">
+                    <h2 className="about-hero-heading">
                         A coder who creates <span className="highlight">solutions</span>,
                         <br />
                         and a builder who turns <span className="highlight">ideas</span>
                         <br />
                         into reality.
-                    </h1>
+                    </h2>
 
                     {/* Description Paragraphs */}
                     <div className="about-paragraphs">

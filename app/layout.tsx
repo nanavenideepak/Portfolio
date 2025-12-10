@@ -25,9 +25,9 @@ const scienceGothic = {
 };
 
 export const metadata: Metadata = {
-  title: "MAGNETTO | Design Studio",
-  description: "At Magnetto, we break boundaries to craft designs that stand out and deliver results. We blend creativity with strategy, turning bold ideas into digital experiences that captivate and inspire.",
-  keywords: ["design studio", "portfolio", "creative agency", "web design", "digital experiences"],
+  title: "Deepak Nanaveni",
+  description: "Full Stack Developer portfolio - Building fast, intuitive, and meaningful digital experiences at the intersection of full-stack development and AI.",
+  keywords: ["full stack developer", "portfolio", "web development", "AI", "React", "Next.js", "Deepak Nanaveni"],
 };
 
 export default function RootLayout({

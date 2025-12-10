@@ -392,8 +392,9 @@ nextjs-portal,
 @media (max-width: 900px) {
   .home-section-bg .section-content {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 50px;
+    align-items: center;
   }
 
   .home-left {
@@ -401,7 +402,7 @@ nextjs-portal,
     order: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .home-right {
@@ -412,6 +413,15 @@ nextjs-portal,
   .profile-box {
     width: 380px;
     height: 500px;
+  }
+
+  /* Left align hero text for tablet - both start from same point */
+  .hero-subtitle {
+    text-align: left;
+  }
+
+  .hero-title {
+    text-align: left;
   }
 }
 
@@ -4750,6 +4760,16 @@ nextjs-portal,
 
 /* Tablet breakpoint */
 @media (max-width: 900px) {
+
+  /* Hide all decorative light effects on tablet */
+  .rotating-border-glow,
+  .gradient-blob,
+  .box-inner-glow {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
   .fancy-right-box-wrapper {
     width: 100%;
     display: flex;
@@ -4763,6 +4783,7 @@ nextjs-portal,
     height: auto;
     min-height: 350px;
     padding: 40px 30px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -4796,6 +4817,7 @@ nextjs-portal,
     min-height: 300px;
     padding: 35px 25px;
     border-radius: 20px;
+    box-shadow: none !important;
   }
 
   .fancy-line {

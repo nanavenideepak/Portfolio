@@ -4855,30 +4855,62 @@ nextjs-portal,
 /* Remove extra whitespace on mobile home section */
 @media (max-width: 900px) {
   .home-section-bg {
-    min-height: auto;
-    padding: 60px 0 40px;
+    min-height: auto !important;
+    padding: 60px 0 0 !important;
+  }
+
+  .home-section-bg.section-full {
+    padding: 60px 0 0 !important;
   }
 
   .home-section-bg .section-content {
     gap: 30px;
+    padding-bottom: 0;
   }
 
   .profile-box {
     margin-bottom: 0;
   }
+
+  .home-right {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 600px) {
   .home-section-bg {
-    padding: 40px 0 20px;
+    padding: 30px 0 0 !important;
+  }
+
+  .home-section-bg.section-full {
+    padding: 30px 0 0 !important;
   }
 
   .home-section-bg .section-content {
-    gap: 25px;
+    gap: 20px;
+    padding-bottom: 0;
   }
 
   .section-content {
     padding: 0 20px;
+  }
+
+  .profile-box {
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-right {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Make about section overlap slightly to prevent white gap */
+  .about-section {
+    margin-top: -10px;
+    padding-top: 90px;
   }
 }
 

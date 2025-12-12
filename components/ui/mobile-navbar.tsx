@@ -40,8 +40,15 @@ export default function MobileNavbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
             >
-                {/* Left: Profile Image and Name */}
-                <div className="flex items-center gap-4">
+                {/* Left: Profile Image and Name - Clickable to scroll to home */}
+                <a
+                    href="#home"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-4 cursor-pointer pointer-events-auto"
+                >
                     <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-700">
                         <Image
                             src="/profile.png"
@@ -54,7 +61,7 @@ export default function MobileNavbar() {
                     <span className="text-white text-[17px] font-medium tracking-wide">
                         Nanaveni Deepak
                     </span>
-                </div>
+                </a>
 
                 {/* Right: Animated Hamburger/Close Button */}
                 <button
@@ -116,8 +123,15 @@ export default function MobileNavbar() {
                     >
                         {/* Top Bar */}
                         <div className="flex items-center justify-between min-h-[65px]" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
-                            {/* Left: Profile and Name */}
-                            <div className="flex items-center gap-4">
+                            {/* Left: Profile and Name - Clickable to scroll to home */}
+                            <a
+                                href="#home"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection("#home");
+                                }}
+                                className="flex items-center gap-4 cursor-pointer pointer-events-auto"
+                            >
                                 <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-700">
                                     <Image
                                         src="/profile.png"
@@ -130,7 +144,7 @@ export default function MobileNavbar() {
                                 <span className="text-white text-[17px] font-medium tracking-wide">
                                     Nanaveni Deepak
                                 </span>
-                            </div>
+                            </a>
 
                             {/* Right: Close Button - White bg with black X */}
                             <button

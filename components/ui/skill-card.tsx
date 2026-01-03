@@ -24,19 +24,22 @@ const cardVariants: Variants = {
 function TechIcon({ slug, isCardHovered }: { slug: string; isCardHovered: boolean }) {
     const [icon, setIcon] = useState<SimpleIcon | null>(null);
     const [isIconHovered, setIsIconHovered] = useState(false);
+    const isCustomImage = slug.startsWith("/");
 
     useEffect(() => {
-        fetchSimpleIcons({ slugs: [slug] })
-            .then((result) => {
-                if (result.simpleIcons[slug]) {
-                    setIcon(result.simpleIcons[slug]);
-                }
-            })
-            .catch(() => { });
-    }, [slug]);
+        if (!isCustomImage) {
+            fetchSimpleIcons({ slugs: [slug] })
+                .then((result) => {
+                    if (result.simpleIcons[slug]) {
+                        setIcon(result.simpleIcons[slug]);
+                    }
+                })
+                .catch(() => { });
+        }
+    }, [slug, isCustomImage]);
 
-    // Don't render if icon not found
-    if (!icon) {
+    // Don't render if icon not found (unless it's a custom image)
+    if (!icon && !isCustomImage) {
         return null;
     }
 
@@ -65,18 +68,26 @@ function TechIcon({ slug, isCardHovered }: { slug: string; isCardHovered: boolea
                 }}
                 transition={{ duration: 0.25 }}
             >
-                <span title="">
-                    {renderSimpleIcon({
-                        icon: icon,
-                        size: 36,
-                        aProps: {
-                            href: undefined,
-                            title: "",
-                            style: { cursor: "pointer", pointerEvents: "none" },
-                            onClick: (e: React.MouseEvent) => e.preventDefault(),
-                        },
-                    })}
-                </span>
+                {isCustomImage ? (
+                    <img
+                        src={slug}
+                        alt="Tech icon"
+                        style={{ width: 36, height: 36, objectFit: "contain" }}
+                    />
+                ) : (
+                    <span title="">
+                        {renderSimpleIcon({
+                            icon: icon!,
+                            size: 36,
+                            aProps: {
+                                href: undefined,
+                                title: "",
+                                style: { cursor: "pointer", pointerEvents: "none" },
+                                onClick: (e: React.MouseEvent) => e.preventDefault(),
+                            },
+                        })}
+                    </span>
+                )}
             </motion.div>
         </motion.div>
     );

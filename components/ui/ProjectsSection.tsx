@@ -15,7 +15,7 @@ const projectsData = [
         extraCount: 2,
         icon: <Home size={48} strokeWidth={1.5} />,
         iconBg: "linear-gradient(135deg, #4ade80 0%, #22c55e 100%)",
-        liveLink: "https://airbnb-project-rpsf.onrender.com",
+        liveLink: "https://airbnb-project-rpsf.onrender.com/listings",
         githubLink: "https://github.com/nanavenideepak/airbnb-project",
     },
     {
@@ -27,8 +27,8 @@ const projectsData = [
         extraCount: 1,
         icon: <Video size={48} strokeWidth={1.5} />,
         iconBg: "linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)",
-        liveLink: null,
-        githubLink: "https://github.com/nanavenideepak/ConnectLive",
+        liveLink: "https://connectify-4bce.vercel.app/",
+        githubLink: "https://github.com/nanavenideepak/Connectify",
     },
     {
         title: "Multi-PDF RAG Chatbot",
@@ -40,7 +40,7 @@ const projectsData = [
         icon: <FileSearch size={48} strokeWidth={1.5} />,
         iconBg: "linear-gradient(135deg, #f472b6 0%, #ec4899 100%)",
         liveLink: null,
-        githubLink: "https://github.com/nanavenideepak/MultiPDF-RAG-Chatbot",
+        githubLink: "https://github.com/nanavenideepak/MULTI-PDF-RAG",
     },
 ];
 
